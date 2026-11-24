@@ -4,8 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Tests](https://github.com/maxbeckers/php-openapi-tools/actions/workflows/tests.yml/badge.svg)](https://github.com/maxbeckers/php-openapi-tools/actions/workflows/tests.yml)
 
-Standalone CLI tools and PHP APIs for transforming OpenAPI documents, independent
-of code generation.
+Standalone CLI tools and PHP APIs for transforming OpenAPI documents.
 
 ## Features
 
@@ -13,7 +12,7 @@ of code generation.
 - Bundle documents by resolving supported local references.
 - Record source locations for bundled content and map bundled pointers back to
   their original source locations.
-- Use the CLI or the PHP API without requiring a code generator.
+- Use the CLI or the PHP API.
 
 ## Requirements
 
