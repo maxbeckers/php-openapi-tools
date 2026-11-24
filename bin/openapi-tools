@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$candidates = [
+    $GLOBALS['_composer_autoload_path'] ?? '',
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+foreach ($candidates as $candidate) {
+    if (file_exists($candidate)) {
+        require_once $candidate;
+        $application = new \Symfony\Component\Console\Application('openapi-tools');
+        $application->addCommand(new \MaxBeckers\OpenApiTools\Command\OverlayCommand());
+        $application->addCommand(new \MaxBeckers\OpenApiTools\Command\BundleCommand());
+        $application->run();
+        exit;
+    }
+}
+
+fwrite(STDERR, "Autoloader not found. Run `composer install` first.\n");
+exit(1);
